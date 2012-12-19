@@ -4,11 +4,12 @@
   %header
     %h2 Not Started
   %ul
-    %li.coderetreat Chicago
-    %li.coderetreat Seattle
+    - @coderetreats.not_started do |coderetreat|
+      %li.coderetreat=coderetreat.location
 %section.coderetreats.in_session
   %header
     %h2 In Session
   %ul
-    %li.coderetreat Berlin
+    - @coderetreats.in_session do |coderetreat|
+      %li.coderetreat=coderetreat.location
 

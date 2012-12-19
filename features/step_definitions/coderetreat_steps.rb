@@ -1,8 +1,6 @@
 Given /^there are no coderetreats running today$/ do
 end
 
-Coderetreat = Struct.new :status, :location
-
 Given /^there are some coderetreats running today$/ do
   @coderetreats = [
     Coderetreat.new("not_started", "Chicago"),
