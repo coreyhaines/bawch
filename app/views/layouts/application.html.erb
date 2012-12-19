@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CoderetreatLive</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="The Global Day of Coderetreat as a day when developers all over the world will be practicing the fundamentals of software development." />
+  <%= yield :head %>
+  <link rel="icon" type="image/png" href="/assets/gdcr-favicon.ico">
+
+  <title>Coderetreat Live! - Coordination for simultaneous coderetreat events</title>
+
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="wrapper">
 
-<%= yield %>
+	<header class="branding">
+    <a id="logo" href="/"><%= image_tag "gdcr-world.png", alt: "logo" %></a>
+    <h1><a href="/">Coderetreat Live!</a></h1>
+    <h2>- honing the craft together</h2>
+	</header>
+
+	<aside>
+		<header>
+		<h2>Actions</h2>
+		</header>
+	</aside>
+
+  <article>
+    <%= yield %>
+  </article>
+
+  </div>
 
 </body>
 </html>

@@ -1,3 +1,569 @@
-// Place all the styles related to the coderetreats controller here.
+// Place all the styles related to the coderetreat controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Colour values
+$nightRider: #1B120D; //background
+$fuelYellow: #F0A130; //Headers
+$tiaMaria: #D73513; //Links, Nav Boxes
+$lemonChiffon: #FFFACB; //Text Blocks
+$paarl: #995E24; //Header Backgrounds
+$eclipse: #312118; //Boarders
+$black: #000000; //	Body Text
+
+@mixin titletxt {
+	color:$fuelYellow;
+	font: {
+		family:Geneva,Arial,Helvetica,sans-serif;
+		size:1.35em;
+	}
+	line-height: 1.2;
+	margin:0 0 .25em;
+}
+
+@mixin bodytxt {
+	font: {
+		family:Arial,Helvetica,sans-serif;
+		size:1em;
+	}
+	line-height: 1.4;
+	margin:0 0 .5em;
+}
+
+// include Normalize css reset
+/*! normalize.css 2011-09-22T17:42 UTC - http://github.com/necolas/normalize.css */
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ */
+
+audio:not([controls]) {
+    display: none;
+}
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+
+[hidden] {
+    display: none;
+}
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    overflow-y: scroll; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+    -ms-text-size-adjust: 100%; /* 3 */
+}
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+
+body {
+    margin: 0;
+}
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
+*/
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+
+/* 1 */
+
+/*
+q {
+    quotes: none;
+}
+*/
+
+/* 2 */
+
+/*
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+*/
+
+small {
+    font-size: 75%;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul,
+ol {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE9
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+
+figure {
+    margin: 0;
+}
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+
+form {
+    margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ */
+
+legend {
+    border: 0; /* 1 */
+    *margin-left: -7px; /* 2 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3/4, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ */
+
+button,
+input {
+    line-height: normal; /* 1 */
+}
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ * 3. Corrects inner spacing displayed oddly in IE7 without effecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer; /* 1 */
+    -webkit-appearance: button; /* 2 */
+    *overflow: visible;  /* 3 */
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Addresses excess padding in IE8/9
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Corrects inner padding displayed oddly in S5, Chrome on OSX
+ */
+
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Corrects inner padding and border displayed oddly in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+/*
+ * Remove most spacing between table cells
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+// END Normalize reset file
+
+body {background:$nightRider; font:76%/1.3 Arial,Helvetica,sans-serif;}
+
+h1, h2, h3 {@include titletxt;}
+h1 {font-size:2.75em;}
+h2 {font-size: 1.75em;}
+h3 {color:$black;}
+
+p {margin:.5em 0;}
+
+a {color:$tiaMaria;
+	&:hover, &:visited {color:$tiaMaria; text-decoration:none;}
+}
+
+.wrapper {margin:0 auto; width:1028px;}
+
+header.branding {background:$paarl; margin-bottom:10px; padding:10px 0 10px 40px; zoom: 1; width:988px;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	a#logo {float:left; margin-right: 50px;}
+	h1 { margin-left: 50px; margin-top:20px;
+		a { display:block; overflow: hidden; width: 532px;
+text-decoration: none; color: $fuelYellow}
+	}
+  h2 {
+    font-size: 1em;
+    margin-left: 300px;
+  }
+}
+
+aside {background: image-url("bg-content-btm.jpg") repeat-x scroll left bottom $lemonChiffon; float: right; margin: 0 0 50px; padding: 20px 0 40px; text-align: center; width: 220px;
+	section.sponsors header {
+	    color: #995E24;
+	    font-size: 1.2em;
+	    margin-top: 15px;
+	}
+	.sponsors ul {
+	    padding: 0;
+	    width: 216px;
+	}
+	.sponsors ul li {
+	    font-size: 1.3em;
+	    line-height: 1.8;
+	    list-style-type: none;
+	    padding: 5px;
+	}
+}
+
+article {background: image-url("bg-content-btm.jpg") repeat-x scroll left bottom $lemonChiffon; float: left; margin: 0 0 50px; padding: 20px 10px 60px; width: 778px;
+	.coderetreats {
+		header {margin-top:20px; padding:20px 0 0;
+			h2 {border-bottom:1px solid $paarl; padding:0 10px 10px;}
+		}
+		ul {list-style: none; margin:0 10px; padding:0; zoom: 1;
+			&:before, &:after { content: ""; display: table; }
+			&:after { clear: both; }
+			li {border-bottom:1px solid $eclipse; border-color: transparentize($eclipse, 0.9); display:block; float:left; font-weight: bold; padding-bottom:10px; padding-right:20px; padding-top:10px; vertical-align: top; width:169px;
+				.session_information {font-weight: normal;
+					.topic {clear:left;
+						&:before {content:"Topic: "; font-weight: bold;}
+					}
+				}
+			}
+		}
+		&.in_session {
+			ul li {min-height: 150px; height:150px;}
+		}
+	}
+}
+
+section.actions {
+  margin-top: 1em;
+  ul {
+    list-style-type: none;
+    padding-left: 10px;
+    li {
+      display: inline;
+      margin-right: 10px;
+    }
+  }
+  a {
+    border: 1px solid orange;
+    background: orange;
+    padding: 10px;
+    text-shadow: -1px -1px 2px #618926;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+}
+
+section.session_information {
+  margin-top: 3em;
+}
