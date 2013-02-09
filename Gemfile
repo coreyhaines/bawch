@@ -20,5 +20,5 @@ end
 group :test do
   gem 'database_cleaner', '0.9.1'
   gem 'rspec-rails', '2.12.2'
-  gem 'cucumber-rails', '1.3.0'
+  gem 'cucumber-rails', '1.3.0', require: false
 end
