@@ -11,12 +11,14 @@ module CoderetreatLive
           @coderetreats = coderetreats
         end
 
-        def not_started(&block)
-          self.coderetreats.select{|cr| cr.status == "not_started"}.each(&block)
+        ["not_started", "in_session"].each do |status|
+          define_method status do |&block|
+            in_status(status, &block)
+          end
         end
 
-        def in_session(&block)
-          self.coderetreats.select{|cr| cr.status == "in_session"}.each(&block)
+        def in_status(status, &block)
+          self.coderetreats.select{|cr| cr.status == status}.each(&block)
         end
       end
     end
