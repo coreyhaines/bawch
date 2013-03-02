@@ -1,3 +1,4 @@
+require 'coderetreats/presenters/collection'
 Coderetreat = Struct.new :status, :location
 
 class CoderetreatsController < ApplicationController
