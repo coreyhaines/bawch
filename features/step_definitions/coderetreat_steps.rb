@@ -1,11 +1,12 @@
 Given /^there are no coderetreats running today$/ do
+  Coderetreat.destroy_all
 end
 
 Given /^there are some coderetreats running today$/ do
   @coderetreats = [
-    Coderetreat.new("not_started", "Chicago"),
-    Coderetreat.new("not_started", "Seattle"),
-    Coderetreat.new("in_session", "Berlin")
+    Coderetreat.create!(status: "not_started", location: "Chicago"),
+    Coderetreat.create!(status: "not_started", location: "Seattle"),
+    Coderetreat.create!(status: "in_session",  location:"Berlin")
   ]
 end
 
