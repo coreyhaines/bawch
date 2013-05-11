@@ -26,3 +26,16 @@ Then /^I should see the running coderetreats grouped by status$/ do
   end
 end
 
+Given(/^a coderetreat that has not started$/) do
+  @coderetreat = Coderetreat.create! status: "not_started", location: "Chicago"
+end
+
+When(/^I start the coderetreat$/) do
+  visit edit_status_coderetreat_url(@coderetreat)
+  click_on "Start Session"
+end
+
+Then(/^I should see that the coderetreat is in session$/) do
+  page.should have_css(".in_session .coderetreat", text: @coderetreat.location)
+end
+
