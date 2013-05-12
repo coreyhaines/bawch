@@ -23,9 +23,8 @@ describe CoderetreatsController do
   end
 
   describe "PUT /update_status" do
-    let(:status_updater) { stub(update_to: nil) }
     before do
-      stub_const("CoderetreatLive::Coderetreats::Status", status_updater)
+      CoderetreatLive::Coderetreats::Status.stub(:update_to)
     end
 
     it "redirects back to the edit status page" do
@@ -34,7 +33,7 @@ describe CoderetreatsController do
     end
 
     it "updates the status of the coderetreat" do
-      status_updater.should_receive(:update_to).with("5", "in_session")
+      CoderetreatLive::Coderetreats::Status.should_receive(:update_to).with("5", "in_session")
 
       put :update_status, id: "5", new_status: "in_session"
     end
