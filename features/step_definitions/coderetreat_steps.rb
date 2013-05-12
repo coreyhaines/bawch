@@ -39,3 +39,16 @@ Then(/^I should see that the coderetreat is in session$/) do
   page.should have_css(".in_session .coderetreat", text: @coderetreat.location)
 end
 
+Given(/^a coderetreat that is in session$/) do
+  @coderetreat = Coderetreat.create! status: "in_session", location: "Chicago"
+end
+
+When(/^I start a break for the coderetreat$/) do
+  visit edit_status_coderetreat_url(@coderetreat)
+  click_on "Start Break"
+end
+
+Then(/^I should see that the coderetreat is on break$/) do
+  page.should have_css(".on_break .coderetreat", text: @coderetreat.location)
+end
+
