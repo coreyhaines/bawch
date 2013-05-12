@@ -1,0 +1,4 @@
+%h1 Edit the status for #{@coderetreat.location}
+
+=form_for @coderetreat, url: update_status_coderetreat_path(@coderetreat, new_status: "in_session"), method: "put" do |f|
+  =f.submit "Start Session"

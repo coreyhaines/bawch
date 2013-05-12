@@ -11,4 +11,14 @@ describe CoderetreatsController do
       expect(assigns(:coderetreats)).to be(coderetreats_presenter)
     end
   end
+
+  describe "GET /edit_status" do
+    it "assigns the coderetreat" do
+      coderetreat = stub
+      ::Coderetreat.stub(:find).with("5") { coderetreat}
+
+      get :edit_status, id: "5"
+      expect(assigns(:coderetreat)).to be(coderetreat)
+    end
+  end
 end
