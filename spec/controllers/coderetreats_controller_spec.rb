@@ -12,16 +12,6 @@ describe CoderetreatsController do
     end
   end
 
-  describe "GET /edit_status" do
-    it "assigns the coderetreat" do
-      coderetreat = stub
-      ::Coderetreat.stub(:find).with("5") { coderetreat}
-
-      get :edit_status, id: "5"
-      expect(assigns(:coderetreat)).to be(coderetreat)
-    end
-  end
-
   describe "PUT /update_status" do
     before do
       CoderetreatLive::Coderetreats::Status.stub(:update_to)
@@ -29,7 +19,7 @@ describe CoderetreatsController do
 
     it "redirects back to the edit status page" do
       put :update_status, id: "5", new_status: "in_session"
-      expect(response).to redirect_to(edit_status_coderetreat_url("5"))
+      expect(response).to redirect_to(edit_coderetreat_status_url("5"))
     end
 
     it "updates the status of the coderetreat" do

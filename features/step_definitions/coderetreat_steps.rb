@@ -31,7 +31,7 @@ Given(/^a coderetreat that has not started$/) do
 end
 
 When(/^I start the coderetreat$/) do
-  visit edit_status_coderetreat_url(@coderetreat)
+  visit edit_coderetreat_status_url(@coderetreat)
   click_on "Start Session"
 end
 
@@ -44,7 +44,7 @@ Given(/^a coderetreat that is in session$/) do
 end
 
 When(/^I start a break for the coderetreat$/) do
-  visit edit_status_coderetreat_url(@coderetreat)
+  visit edit_coderetreat_status_url(@coderetreat)
   click_on "Start Break"
 end
 
