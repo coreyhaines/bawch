@@ -32,7 +32,7 @@ end
 
 When(/^I start the coderetreat$/) do
   visit edit_coderetreat_status_url(@coderetreat)
-  click_on "Start Session"
+  click_on "In Session"
 end
 
 Then(/^I should see that the coderetreat is in session$/) do
@@ -45,7 +45,7 @@ end
 
 When(/^I start a break for the coderetreat$/) do
   visit edit_coderetreat_status_url(@coderetreat)
-  click_on "Start Break"
+  click_on "On Break"
 end
 
 Then(/^I should see that the coderetreat is on break$/) do

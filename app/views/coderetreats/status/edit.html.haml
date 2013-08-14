@@ -1,7 +1,5 @@
 %h1 Edit the status for #{@coderetreat.location}
 
-=form_for @coderetreat, url: coderetreat_status_path(@coderetreat, new_status: "in_session"), method: "put" do |f|
-  =f.submit "Start Session"
-
-=form_for @coderetreat, url: coderetreat_status_path(@coderetreat, new_status: "on_break"), method: "put" do |f|
-  =f.submit "Start Break"
+-@coderetreat.available_next_statuses.each do |status|
+  =form_for @coderetreat, url: coderetreat_status_path(@coderetreat, new_status: status), method: "put" do |f|
+    =f.submit status.titleize
