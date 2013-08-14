@@ -29,6 +29,16 @@ describe CoderetreatLive::Coderetreats::Presenters::Collection do
         end
         expect(expected_statuses).to eq([])
       end
+
+      it "yields the coderetreats associated to the statuses" do
+        yielded_coderetreats = {}
+        presenter.grouped_by_status do |status, coderetreats|
+          yielded_coderetreats[status] = coderetreats
+        end
+        expect(yielded_coderetreats["in_session"]).to eq([in_session])
+        expect(yielded_coderetreats["on_break"]).to eq([on_break])
+        expect(yielded_coderetreats["not_started"]).to eq([not_started])
+      end
     end
   end
 end
